@@ -9,13 +9,21 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import CreateAppContainer from './src/navigation';
+import * as firebase from 'firebase';
+var config = {
+	apiKey: 'AIzaSyCmk2rEBN-IduVeWq3Es-7V-tqaFwIxIvY',
+	authDomain: 'socialnetworking-b9e97.firebaseapp.com',
+	databaseURL: 'https://socialnetworking-b9e97.firebaseio.com',
+	projectId: 'socialnetworking-b9e97',
+	storageBucket: 'socialnetworking-b9e97.appspot.com',
+	messagingSenderId: '380859482392',
+};
 
-const instructions = Platform.select({
-	ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-	android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
-});
+const firebaseInstance = firebase.initializeApp(config);
 
 export default class App extends Component {
+	componentDidMount() {}
+
 	render() {
 		let AppContainer = CreateAppContainer();
 		return (
